@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <style>
+        .head{
+            font-size:100px;
+            text-align: center;
+            margin:120px auto;
+            margin-bottom:0px;
+        }
+        .form{
+            text-align: center;
+            padding:0px auto;
+        }
+        #CityName{
+            font-size:30px;
+            border-radius:20px;
+            width:50%;
+        }
+        #smt{
+            font-size:30px;
+            border-radius:100%;
+        }
+        @media(max-width:750px){
+            .head{
+                font-size:12vw;
+            }
+            #CityName{
+                width:70%;
+                font-size:5vw;
+            }
+            #smt{
+                font-size:5vw;
+            }
+        }
+    </style>
+    <div class="head">
+        Weather Forecast
+    </div>
+    <form action="/" method="POST">
+        <div class="form">
+        <input name='cityname' type="text" id="CityName" placeholder="Enter your cityname">
+        <button type="submit" id="smt"><i class="bi bi-arrow-right"></i></button>
+        </div>
+    </form>
+</body>
+</html>

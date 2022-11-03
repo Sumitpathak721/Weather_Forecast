@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+    <link rel="stylesheet" href="./info.css">
+</head>
+<body>
+    <%if(Data){%>
+        <div class="head">
+            Weather Info
+        </div>
+        <div class="go_back"><a href="/">Go back</a></div>
+        <fieldset class="part">
+            <legend>Location:</legend>
+            <p>City Name: <%=Data.name%></p>
+            <p>Country code: <%=Data.sys.country%></p>
+            <p>Coordinate: longitude=<%=Data.coord.lon%>, latitude=<%=Data.coord.lat%> </p>
+        </fieldset>
+        <fieldset class="part">
+            <legend>Weather info:</legend>
+            <p>Temperature: <%=Data.main.temp%></p>
+            <p>Sea Level: <%=Data.main.sea_level%></p>
+            <p>Ground Level: <%=Data.main.grnd_level%></p>
+            <p>Pressure: <%=Data.main.pressure%></p>
+            <p>Humidity: <%=Data.main.humidity%></p>
+            <p>wind speed: <%=Data.wind.speed%>mph in <%=Data.wind.deg%>%</p>
+        </fieldset>
+        <fieldset class="part">
+            <legend>Suggestion:</legend>
+            <img src="http://openweathermap.org/img/wn/<%=Data.weather[0].icon%>@2x.png" alt="">
+            <p>Description: <%=Data.weather[0].description%></p>
+
+        </fieldset>
+    <%}else{%>    
+    <div>Sorry this city doesn't exist or not updated in google map</div>
+    <%}%>
+</body>
+</html>
